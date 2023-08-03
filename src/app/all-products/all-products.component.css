@@ -1,0 +1,31 @@
+section {
+  padding: 0px 20px;
+}
+
+.anItem {
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.anItem p:hover{
+    color: #27aae2;
+    transition: 0.1s;
+}
+
+.anItem img {
+  width: 120px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.anItem .rating {
+  font-size: 10px;
+  color: #494949;
+}
+
+.anItem:hover {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}

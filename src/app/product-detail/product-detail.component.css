@@ -1,0 +1,47 @@
+section ul {
+  padding-left: 0px !important;
+}
+
+.innerDiv {
+  background-color: #ffffff;
+}
+
+.innerDiv hr {
+  margin: 5px 0px;
+}
+
+.mainImg {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+p img {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  object-fit: contain;
+  cursor: pointer;
+  border: 1px solid #dedede;
+  margin: 5px;
+}
+
+div .Description {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.Description h4 {
+  margin: 5px 0px 10px;
+}
+
+.Description .heading{
+    color: gray;
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+.Description .heading span{
+    color: #27aae2;
+    margin-left: 5px;
+}

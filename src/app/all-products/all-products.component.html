@@ -1,0 +1,29 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+  <div class="row">
+    <div class="col-md-10">
+      <h2 class="mt-0 mb-0">Products ({{productsCount}})</h2>
+    </div>
+    <div class="col-md-2 to-right">
+      <button class="btn bg-primary" routerLink="/add-product">New Product</button>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+
+    <div *ngFor="let product of allProducts; index as i" class="col-md-2 anItem" (click)="productDetails(i)">
+      <p class="center">
+        <img [src]="product.productThumbnail">
+      </p>
+      <p>{{product.productTitle}}</p>
+      <h4 class="secondary">${{product.productPrice}}</h4>
+      <p class="rating">
+        <i class="fas fa-star"></i> 4.5
+      </p>
+    </div>
+
+  </div>
+
+</section>

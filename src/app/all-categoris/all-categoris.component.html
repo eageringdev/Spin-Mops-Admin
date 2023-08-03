@@ -1,0 +1,26 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+  <div class="row">
+    <div class="col-md-10">
+      <h2 class="mt-0 mb-0">Categories</h2>
+    </div>
+    <div class="col-md-2 to-right">
+      <button class="btn bg-primary" routerLink="/add-category">New Category</button>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+
+
+    <div (click)="goToProducts(i)" *ngFor="let category of allCategories; index as i" class="col-md-2 anItem center">
+      <img src="/assets/imgs/products/p6.jpg">
+      <p>{{category.categoryName}}</p>
+      <p class="smallTxt">Category Type: {{category.categoryType}}</p>
+    </div>
+
+
+  </div>
+
+</section>

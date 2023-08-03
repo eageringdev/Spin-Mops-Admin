@@ -1,0 +1,45 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3 *ngIf="editDrivers == false" class="mt-0 mb-0">New Driver</h3>
+      <h3 *ngIf="editDrivers == true" class="mt-0 mb-0">Edit Driver</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="inputDiv" style="padding: 0px 20px;">
+        <label>Driver Name:</label>
+        <input [(ngModel)]="fullName" type="text" class="text-field mb-1" placeholder="Full Name">
+
+        <label>Driver Contact:</label>
+        <input maxlength="8" [(ngModel)]="contact" type="tel" class="text-field mb-1" placeholder="Contact">
+
+        <label>Home Address:</label>
+        <input [(ngModel)]="address" type="text" class="text-field mb-1" placeholder="Complete Address">
+
+        <label>Email (Optional):</label>
+        <input [(ngModel)]="email" type="email" class="text-field mb-1" placeholder="Email">
+
+        <label class="wide">Gender:</label>
+        <label class="radio-inline">
+          <input value="male" [(ngModel)]="gender" type="radio" name="radioOpt" value="male">Male
+        </label>
+        <label class="radio-inline">
+          <input value="female" [(ngModel)]="gender" type="radio" name="radioOpt" value="female">Female
+        </label>
+        <button *ngIf="editDrivers == false" (click)="saveDriver()"
+          class="btn bg-primary wide mt-1 h-45">Submit</button>
+        <button *ngIf="editDrivers == true" (click)="editDriver()" class="btn bg-primary wide mt-1 h-45">Save
+          Edits</button>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+</section>

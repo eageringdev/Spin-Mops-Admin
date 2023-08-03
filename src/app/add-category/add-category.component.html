@@ -1,0 +1,34 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="mt-0">New Category</h2>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="inputDiv" style="padding: 10px 20px;">
+
+        <label>Category Name:</label>
+        <input [(ngModel)]="categoryName" type="text" class="text-field mb-1" placeholder="Name">
+
+        <label class="wide">Category For:</label>
+        <label class="radio-inline">
+          <input value="product" [(ngModel)]="categoryType" type="radio" name="radioOpt">Product
+        </label>
+        <label class="radio-inline">
+          <input value="cleaning" [(ngModel)]="categoryType" type="radio" name="radioOpt">Cleaning
+        </label>
+
+        <button style="margin-top:1em" (click)="addCategory()" class="btn bg-primary wide h-45">Submit</button>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+</section>

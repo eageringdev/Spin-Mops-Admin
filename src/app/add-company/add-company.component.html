@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row mt-1">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p class="center">
+        <img src="/assets/imgs/appLogo.png" />
+      </p>
+      <div class="loginDiv mt-2">
+        <div class="heading">
+          <h5 class="center white">Add Company Info</h5>
+        </div>
+        <form class="inputForm" [formGroup]="addCompanyForm">
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-user"></i></span>
+              <input
+                id="cname"
+                type="text"
+                formControlName="companyName"
+                class="text-field login-fields"
+                placeholder="Company Name"
+              />
+            </div>
+            <div
+              *ngIf="addCompanyFormSubmitted && cForm.companyName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="cForm.companyName.errors.required">
+                Company Name is required
+              </div>
+            </div>
+          </div>
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <input
+                id="location"
+                type="text"
+                formControlName="location"
+                class="text-field login-fields"
+                placeholder="Location"
+              />
+            </div>
+            <div
+              *ngIf="addCompanyFormSubmitted && cForm.location.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="cForm.location.errors.required">
+                Location is required
+              </div>
+            </div>
+          </div>
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-phone"></i>
+              </span>
+              <input
+                id="contact"
+                type="tel"
+                formControlName="companyContract"
+                class="text-field login-fields"
+                placeholder="Company Contact"
+              />
+            </div>
+            <div
+              *ngIf="addCompanyFormSubmitted && cForm.companyContract.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="cForm.companyContract.errors.required">
+                Company Contract is required
+              </div>
+            </div>
+          </div>
+          <p class="center">
+            {{ signUpErrorMessage }}
+          </p>
+          <p class="center">
+            <button
+              (click)="tryRegister()"
+              class="btn bg-primary login-btn mt-1"
+              [disabled]="signUpLoading"
+            >
+              {{ signUpLoading ? 'Wait...' : 'Sign Up' }}
+            </button>
+          </p>
+          <p class="center pointer" (click)="onGoBack()">Go Back</p>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

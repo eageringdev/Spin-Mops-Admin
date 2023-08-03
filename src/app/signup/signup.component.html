@@ -1,0 +1,171 @@
+<div class="container">
+  <div class="row mt-1">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p class="center">
+        <img src="/assets/imgs/appLogo.png" />
+      </p>
+      <div class="loginDiv">
+        <div class="heading">
+          <h5 class="center white">Join Us</h5>
+        </div>
+        <form [formGroup]="registerForm" class="inputForm">
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-user"></i></span>
+              <input
+                id="fname"
+                type="text"
+                formControlName="fullName"
+                class="text-field login-fields"
+                placeholder="Full Name"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.fullName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.fullName.errors.required">
+                Full Name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-user-circle"></i>
+              </span>
+              <input
+                id="uname"
+                type="text"
+                formControlName="userName"
+                class="text-field login-fields"
+                placeholder="Username"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.userName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.userName.errors.required">
+                User Name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                class="text-field login-fields"
+                placeholder="Email"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.email.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.email.errors.required">
+                Email Name is required
+              </div>
+              <div *ngIf="rForm.email.errors.email">
+                Must be valid email
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-phone"></i>
+              </span>
+              <input
+                id="contact"
+                type="text"
+                formControlName="phoneNumber"
+                class="text-field login-fields"
+                placeholder="Contact"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.phoneNumber.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.phoneNumber.errors.required">
+                Phone Number is required
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+              </span>
+              <input
+                id="password"
+                type="password"
+                formControlName="password"
+                class="text-field login-fields"
+                placeholder="Password"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.password.errors.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+              </span>
+              <input
+                id="cpassword"
+                type="password"
+                formControlName="passwordConfirm"
+                class="text-field login-fields"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div
+              *ngIf="registerFormSubmitted && rForm.passwordConfirm.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="rForm.passwordConfirm.errors.required">
+                Password Confirmation is required
+              </div>
+              <div *ngIf="rForm.passwordConfirm.errors.mustMatch">
+                Password and confirm not match
+              </div>
+            </div>
+          </div>
+          <p class="center">
+            <button
+              type="button"
+              (click)="onNext()"
+              class="btn bg-primary login-btn mt-1"
+            >
+              Next
+            </button>
+          </p>
+          <p class="center pointer" routerLink="/login">
+            Already have an account?
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

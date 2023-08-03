@@ -1,0 +1,134 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+
+  <div class="row">
+    <div class="col-md-10">
+      <h2 class="mt-0 mb-0">John Doe</h2>
+      <ul class="breadcrumb pl-0">
+        <li><a href="all-cleaners">Cleaners</a></li>
+        <li><a>Time Sheet</a></li>
+        <li class="active">Availability: 40 hrs/week</li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <button (click)="saveTimeSheet()" class="btn btn-success wide">Update</button>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-md-2">
+      <h4 class="mt-0">Monday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="mondayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="mondayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Tuesday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="tuesdayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="tuesdayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Wednesday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="wednesdayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="wednesdayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Thursday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="thursdayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="thursdayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Friday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="fridayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="fridayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Saturday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="saturdayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="saturdayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+
+    <div class="col-md-2">
+      <h4 class="mt-0">Sunday:</h4>
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="sundayFrom" type="time" class="text-field" placeholder="From">
+    </div>
+    <div class="col-md-2">
+      <input [(ngModel)]="sundayTo" type="time" class="text-field" placeholder="To">
+    </div>
+    <div class="col-md-6">
+      <p>Availability: 2 hrs</p>
+    </div>
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+
+</section>

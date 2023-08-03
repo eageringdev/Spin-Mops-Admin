@@ -1,0 +1,175 @@
+<app-header></app-header>
+
+<section>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="mt-0 mb-0">Dashboard</h2>
+      <ul class="breadcrumb">
+        <li><a href="home">Home</a></li>
+        <li><a href="home">Dashboard</a></li>
+        <li class="active">Data</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="row topItems secondItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-stream"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">{{this.productsCount}}</p>
+          <hr>
+          <p class="center white">Products</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="row topItems forthItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-outdent"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">{{this.ordersCount}}</p>
+          <hr>
+          <p class="center white">Orders</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="row topItems fifthItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">{{this.cleanersCount}}</p>
+          <hr>
+          <p class="center white">Cleaners</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="row topItems firstItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">{{this.driversCount}}</p>
+          <hr>
+          <p class="center white">Drivers</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- CARD VIEW NAVIGATION -->
+
+  <div class="row mt-2">
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">Add Product</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-plus-circle"></i>
+          </p>
+        </div>
+        <button routerLink="/add-product" class="btn bg-secondary white">New Product</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">Add Cleaner</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-user-plus"></i>
+          </p>
+        </div>
+        <button routerLink="/add-cleaner" class="btn bg-secondary white">New Cleaner</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">Add Category</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-plus-circle"></i>
+          </p>
+        </div>
+        <button routerLink="/add-category" class="btn bg-secondary white">New Category</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">Add Driver</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-user-plus"></i>
+          </p>
+        </div>
+        <button routerLink="/add-driver" class="btn bg-secondary white">New Driver</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">My Products</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-stream"></i>
+          </p>
+        </div>
+        <button routerLink="/all-products" class="btn bg-secondary white">View Products</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">My Cleaners</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-users"></i>
+          </p>
+        </div>
+        <button routerLink="/all-cleaners" class="btn bg-secondary white">View Cleaners</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">All Categories</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-cubes"></i>
+          </p>
+        </div>
+        <button routerLink="/all-categories" class="btn bg-secondary white">My Categories</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="anActivity center">
+        <h5 class="center">My Drivers</h5>
+        <div class="innerDiv">
+          <p class="center">
+            <i class="fas fa-users"></i>
+          </p>
+        </div>
+        <button routerLink="/all-drivers" class="btn bg-secondary white">View Drivers</button>
+      </div>
+    </div>
+
+
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3 *ngIf="editCleaningService == false" class="mt-0 mb-0">New Cleaning Service</h3>
+      <h3 *ngIf="editCleaningService == true" class="mt-0 mb-0">Edit Cleaning Service</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="inputDiv" style="padding: 0px 20px;">
+        <label>Service Name:</label>
+        <input [(ngModel)]="serviceName" type="text" class="text-field mb-1" placeholder="Service Name">
+
+        <label>Service Time:</label>
+        <input [(ngModel)]="serviceTime" type="number" class="text-field mb-1" placeholder="2 hrs">
+
+        <label>Service Cost:</label>
+        <input [(ngModel)]="serviceCost" type="number" class="text-field mb-1" placeholder="$1.0">
+
+        <label>Service Details</label>
+        <input [(ngModel)]="details" type="email" class="text-field mb-1" placeholder="Service Details">
+
+
+        <button *ngIf="editCleaningService == false" (click)="saveService()"
+          class="btn bg-primary wide mt-1 h-45">Submit</button>
+        <button *ngIf="editCleaningService == true" (click)="editDriver()" class="btn bg-primary wide mt-1 h-45">Save
+          Edits</button>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+</section>

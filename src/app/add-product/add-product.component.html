@@ -1,0 +1,165 @@
+<app-header></app-header>
+<ngx-loading
+  [show]="loading"
+  [config]="{ backdropBorderRadius: '14px' }"
+></ngx-loading>
+
+<!-- <select class="currSelect" formControlName="foodCategory" (ngModelChange)="foodCategoryChange($event)">
+    <option value="" disabled selected>Select Default Currency</option>   
+    <option *ngFor="let category of allCategories let i = index" value="{{i}}">{{category.categoryName}}</option>
+</select> -->
+
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <h3 *ngIf="editProduct == false" class="mt-0">New Product</h3>
+      <h3 *ngIf="editProduct == true" class="mt-0">Edit Product</h3>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="row rightDiv">
+            <div class="col-md-12">
+              <label>Select Category</label>
+              <select
+                [(ngModel)]="categoryKey"
+                (ngModelChange)="cleaningCategoryChange($event)"
+              >
+                <option value="" disabled selected>
+                  Select Default Category
+                </option>
+                <option
+                  *ngFor="let category of allCategories"
+                  value="{{ category.key }}"
+                >
+                  {{ category.categoryName }}
+                </option>
+              </select>
+              <label>Product Title</label>
+              <input
+                [(ngModel)]="productTitle"
+                type="text"
+                placeholder="Cleaning Brush etc"
+              />
+            </div>
+            <div class="col-md-6">
+              <label>Product Price</label>
+              <input
+                [(ngModel)]="productPrice"
+                type="text"
+                placeholder="$25.00"
+              />
+            </div>
+            <div class="col-md-6">
+              <label>Brand Name</label>
+              <input
+                [(ngModel)]="productBrand"
+                type="text"
+                placeholder="Kitchen Craft etc"
+              />
+            </div>
+            <!--   <div class="col-md-6">
+              <label>Shipping Fee </label>
+              <input [(ngModel)]="shippingFee" type="text" placeholder="$0.00">
+            </div> -->
+            <div class="col-md-6">
+              <label>Product Quantity</label>
+              <input
+                [(ngModel)]="productQuantity"
+                type="text"
+                placeholder="35"
+              />
+            </div>
+            <div class="col-md-12">
+              <label>Product Description</label>
+              <textarea
+                [(ngModel)]="productDescription"
+                rows="5"
+                placeholder="Description here.."
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="leftDiv">
+            <!--  <img src="/assets/imgs/products/p8.jpg" class="mainImg"> -->
+            <div class="row">
+              <label class="fileType">
+                Thumbnail Image
+                <input
+                  (change)="onChangeFile($event)"
+                  accept=".jpg,.png"
+                  type="file"
+                  id="File"
+                  size="60"
+                />
+              </label>
+              <button
+                *ngIf="thumbnailImageURL"
+                class="btn-danger ml-2 btn"
+                (click)="onRemoveThumbnailImage()"
+              >
+                Remove Image
+              </button>
+            </div>
+            <img
+              *ngIf="thumbnailImageURL"
+              [src]="thumbnailImageURL"
+              alt="Image"
+              height="128"
+              width="128"
+            />
+            <hr />
+
+            <label class="fileType">
+              Choose Other Images (Optional)
+              <input
+                (change)="onChangeAdditionalFile($event)"
+                type="file"
+                accept=".jpg,.png"
+                id="File"
+                size="60"
+                multiple
+              />
+            </label>
+            <button
+              *ngIf="imagesCount > 0"
+              class="btn btn-danger"
+              (click)="onRemoveOtherImages()"
+            >
+              Remove All
+            </button>
+            <li *ngFor="let file of filesArray">
+              {{ file.name }}
+            </li>
+            <p class="center mb-0">
+              <button (click)="cancelClicked()" class="btn btn-default">
+                Cancel
+              </button>
+
+              <button
+                *ngIf="editProduct == false"
+                (click)="addProduct()"
+                class="btn bg-primary"
+              >
+                Save Product
+              </button>
+              <button
+                *ngIf="editProduct == true"
+                (click)="saveEdits()"
+                class="btn bg-primary"
+              >
+                Save Edits
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</section>

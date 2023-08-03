@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p class="center">
+        <img src="/assets/imgs/appLogo.png" />
+      </p>
+      <div class="loginDiv">
+        <div class="heading">
+          <h5 class="center white">Login Now</h5>
+        </div>
+        <form class="inputForm" [formGroup]="loginForm" (ngSubmit)="tryLogin()">
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                class="text-field login-fields"
+                placeholder="Email"
+              />
+            </div>
+            <div
+              *ngIf="loginFormSubmitted && lForm.email.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="lForm.email.errors.required">
+                Email Name is required
+              </div>
+              <div *ngIf="lForm.email.errors.email">
+                Must be valid email
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+              </span>
+              <input
+                id="password"
+                type="password"
+                formControlName="password"
+                class="text-field login-fields"
+                placeholder="Password"
+              />
+            </div>
+            <div
+              *ngIf="loginFormSubmitted && lForm.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="lForm.password.errors.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <p class="center">
+            {{ loginErorMessage }}
+          </p>
+          <p class="center">
+            <button
+              type="submit"
+              [disabled]="loginLoading"
+              class="btn bg-primary login-btn mt-1"
+            >
+              {{ loginLoading ? 'Wait...' : 'Log In' }}
+            </button>
+          </p>
+          <p class="center pointer" routerLink="/forgot-password">
+            Forgot Password?
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <p class="center secondary pointer mt-3" routerLink="/signup">
+    Create a new account
+  </p>
+</div>

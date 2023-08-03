@@ -1,0 +1,254 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+  width: 100% !important;
+  height: 100% !important;
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+}
+
+body {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.row {
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.f-right {
+  float: right !important;
+}
+
+.to-right {
+  text-align: right !important;
+}
+
+.f-left {
+  float: left !important;
+}
+
+.mb-0 {
+  margin-bottom: 0em !important;
+}
+
+.mb-1 {
+  margin-bottom: 1em !important;
+}
+
+.mb-2 {
+  margin-bottom: 2em !important;
+}
+
+.mb-3 {
+  margin-bottom: 3em !important;
+}
+
+.mb-4 {
+  margin-bottom: 4em !important;
+}
+
+.mb-5 {
+  margin-bottom: 5em !important;
+}
+
+.mt-0 {
+  margin-top: 0em !important;
+}
+
+.mt-1 {
+  margin-top: 1em !important;
+}
+
+.mt-2 {
+  margin-top: 2em !important;
+}
+
+.mt-3 {
+  margin-top: 3em !important;
+}
+
+.mt-4 {
+  margin-top: 4em !important;
+}
+
+.mt-5 {
+  margin-top: 5em !important;
+}
+
+.pr-0 {
+  padding-right: 0px !important;
+}
+
+.pl-0 {
+  padding-left: 0px !important;
+}
+
+.pd-0 {
+  padding: 0px !important;
+}
+
+.wide {
+  width: 100% !important;
+}
+
+.h-45 {
+  height: 45px !important;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.gray {
+  color: gray !important;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.primary {
+  color: #27aae2 !important;
+}
+
+.secondary {
+  color: #00a654 !important;
+}
+
+.dark {
+  color: #393939 !important;
+}
+
+.bg-primary {
+  background-color: #27aae2 !important;
+}
+
+.bg-secondary {
+  background-color: #00a654 !important;
+}
+
+.bg-dark {
+  background-color: #393939 !important;
+}
+
+.text-field,
+select {
+  border: 1px solid gray;
+  height: 35px;
+  padding-left: 5px;
+  width: 100% !important;
+  color: #242424 !important;
+  border-radius: 0px !important;
+}
+
+.form-group {
+  margin-bottom: 10px !important;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+table {
+  background-color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 10px !important;
+}
+
+thead {
+  font-weight: bold !important;
+}
+
+.tbl-btn {
+  width: 100px;
+  margin: 0px 5px !important;
+}
+
+.filter-bar {
+  height: 35px !important;
+}
+
+section {
+  padding: 0px 20px;
+}
+
+/*-------------- header style ------------*/
+
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.navbar-header img {
+  width: 50px;
+  margin: 10px 20px 10px 10px !important;
+}
+
+.navbar {
+  border: none !important;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0px !important;
+  background-color: #ffffff !important;
+}
+
+.navbar-nav>li {
+  cursor: pointer !important;
+}
+
+.navbar-nav>li>a {
+  padding: 20px !important;
+  color: #292929 !important;
+}
+
+.navbar-nav>li>a>i {
+  color: #00a654 !important;
+  margin-right: 5px;
+}
+
+.navbar-nav>li>a:hover {
+  color: #00a654 !important;
+  background: transparent !important;
+  transition: 0.2s !important;
+}
+
+.navbar-right img {
+  width: 40px !important;
+}
+
+.navbar-right>li>a {
+  padding: 10px 20px !important;
+}
+
+.navbar-toggle {
+  background-color: #27aae2 !important;
+  margin: 1em 2em !important;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #ffffff !important
+}
+
+.clicked {
+  background-color: #f1f1f1 !important;
+}
+
+body {
+  background-color: #f5f5f5;
+}

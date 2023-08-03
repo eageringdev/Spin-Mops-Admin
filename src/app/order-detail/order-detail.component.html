@@ -1,0 +1,162 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+
+<section>
+
+  <div class="row orderStatusBar">
+    <h4 class="orderStatusTxt mt-1">{{orderObject.orderStatus}}</h4>
+  </div>
+
+  <div class="row mt-2">
+
+    <div class="col-md-6">
+      <div class="innerDiv row">
+        <div class="col-md-6">
+          <h3 class="mt-0">Order details</h3>
+        </div>
+        <div class="col-md-6">
+          <p class="dark to-right">Order ID #{{orderObject.orderId}}</p>
+        </div>
+        <div class="col-md-12">
+          <p>Order Placed: {{orderObject.orderPlacedFormatedDate}}</p>
+          <hr>
+        </div>
+
+        <div *ngIf="orderObject.cleaningServices" class="row">
+          <div *ngFor="let service of orderObject.cleaningServices; index as i" style="margin-top:0.2em !important">
+            <div class="col-md-12">
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/imgs/cleaner.png">
+            </div>
+            <div class="col-md-8">
+              <p>Cleaning Service!</p>
+              <p>Name: {{service.name}}</p>
+              <p>Time: {{service.serviceTime}}</p>
+              <p>Details: {{service.details}}</p>
+
+            </div>
+            <div class="col-md-2">
+              <p class="to-right">${{service.serviceCost}} x 1</p>
+            </div>
+            <div class="row"></div>
+            <hr>
+          </div>
+
+        </div>
+
+
+        <ng-container *ngIf="orderObject.products">
+          <div *ngFor="let product of orderObject.products; index as i" class="row">
+            <div class="col-md-2">
+              <img [src]="product.productThumbnail">
+            </div>
+            <div class="col-md-8">
+              <p>{{product.productTitle}}</p>
+              <p class="smallText">Brand: {{product.productBrand}}</p>
+            </div>
+            <div class="col-md-2">
+              <p class="to-right">${{product.productPrice}} x {{product.requestedQuantity}} = ${{product.subTotal}}</p>
+            </div>
+            <div class="row"></div>
+          </div>
+        </ng-container>
+
+        <hr>
+
+        <div class="col-md-8"></div>
+        <div class="col-md-2">
+          <p class="gray">Subtotal</p>
+        </div>
+        <div class="col-md-2">
+          <p class="to-right">${{orderObject.grandTotal}}</p>
+        </div>
+
+        <div class="col-md-8"></div>
+        <div class="col-md-2">
+          <h3 class="gray">Total</h3>
+        </div>
+        <div class="col-md-2">
+          <h3 class="to-right">${{orderObject.grandTotal}}</h3>
+        </div>
+        <div class="col-md-12">
+          <hr>
+          <p class="secondary">Payment: Cash on Delivery</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="innerDiv">
+        <h3 class="mt-0">Customer:</h3>
+        <p class="primary">Name: {{orderObject.name}}</p>
+        <p class="mt-0">Contact: {{orderObject.contactNo}}</p>
+        <hr>
+
+        <h3>Address</h3>
+        <p class="mt-0">Flat#: {{orderObject.flatNo}}</p>
+        <p class="mt-0">Building#: {{orderObject.buildingNo}}</p>
+        <p class="mt-0">Road#: {{orderObject.roadNo}}</p>
+        <p class="mt-0">Block#: {{orderObject.blockNo}}</p>
+        <p class="mt-0">City#: {{orderObject.city}}</p>
+        <p class="mt-0">State#: {{orderObject.state}}</p>
+        <p class="mt-0">Zip#: {{orderObject.zip}}</p>
+
+        <hr>
+
+        <h3>Complete Shipping Address</h3>
+        <p class="gray">{{orderObject.location}}</p>
+        <hr>
+        <button class="btn btn-default wide">View Location On Map</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="innerDiv">
+        <h4 class="mt-0">Assign Driver <span class="smallTxt">Optional</span></h4>
+        <select>
+          <option selected="true">Sam Doe</option>
+          <option>John Doe</option>
+          <option>Murphy Doe</option>
+        </select>
+
+
+
+        <div *ngIf="orderObject.orderStatus == 'Approved' || orderObject.orderStatus == 'Completed' ">
+          <h4>Assigned Cleaners <span class="editC" *ngIf="orderObject.orderStatus == 'Approved'"
+              (click)="editCleaners()">Edit
+              Cleaner</span></h4>
+          <div *ngFor="let cleaner of this.orderObject.assignedCleaners; index as i" class="row">
+            <div class="col-md-10">{{cleaner.name}}</div>
+          </div>
+        </div>
+
+
+        <div *ngIf="orderObject.orderStatus == 'Pending' || iseditCleaners == true ">
+          <h4 class="mt-1">Assign Cleaner</h4>
+          <div *ngFor="let cleaner of allCleaners; index as i" class="row">
+            <div class="col-md-10">{{cleaner.name}}</div>
+            <div class="col-md-2">
+              <input type="checkbox" [(ngModel)]="cleaner.isSelected"><br>
+            </div>
+          </div>
+
+          <button *ngIf="iseditCleaners == true" (click)="updateOrderCleaners()" class="btn bg-primary wide mt-1">Update
+            Cleaners</button>
+        </div>
+
+        <textarea [(ngModel)]="adminNotes" rows="3" class="wide mt-1" placeholder="Additional Notes:"></textarea>
+        <button *ngIf="orderObject.orderStatus == 'Pending' " (click)="approveOrder()"
+          class="btn bg-primary wide mt-1">Approve Order</button>
+
+        <button *ngIf="orderObject.orderStatus == 'Approved'" (click)="completeOrder()"
+          class="btn bg-primary wide mt-1">Complete Order</button>
+
+        <button (click)="cancelOrder()" class="btn btn-danger wide mt-1">Cancel Order</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>

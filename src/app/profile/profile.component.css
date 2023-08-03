@@ -1,0 +1,94 @@
+.loginDiv {
+  background-color: #ffffff !important;
+}
+
+p img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.loginDiv .heading {
+  background-color: #4db150;
+  padding: 10px;
+}
+
+.loginDiv .inputForm {
+  padding: 40px 30px 20px 30px;
+}
+
+.input-group {
+  border: 1px solid #393939;
+}
+
+input {
+  border: none !important;
+  background: #ffffff !important;
+  color: #393939 !important;
+}
+
+.input-group-addon {
+  background: #ffffff !important;
+  border: none !important;
+  color: #393939;
+}
+
+p button {
+  width: 200px;
+  border-radius: 0px;
+}
+
+
+
+.topItems {
+  background-color: #ffffff;
+  margin-bottom: 1em;
+  border-radius: 2px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5) !important;
+  cursor: pointer;
+}
+
+.topItems i {
+  color: #acacac;
+  font-size: 30px;
+  padding: 20px 10px;
+}
+
+
+.topItems p {
+  margin: 7px 0px;
+  color: #393939 !important;
+}
+
+.topItems:hover i,
+.topItems:hover p {
+  color: #27aae2 !important;
+}
+
+.topItems hr {
+  margin: 5px 0px !important;
+}
+
+/* .firstItem {
+  background-color: #f44236;
+}
+
+.secondItem {
+  background-color: #ff9702;
+}
+
+.thirdItem {
+  background-color: #ffffff;
+}
+
+.forthItem {
+  background-color: #2297f7;
+}
+
+.fifthItem {
+  background-color: #434c66;
+}
+
+.sixthItem {
+  background-color: #3800ba;
+} */

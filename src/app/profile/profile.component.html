@@ -1,0 +1,134 @@
+<app-header></app-header>
+
+<section>
+  <div class="row mt-1">
+    <div class="col-md-3">
+      <h2 class="mt-0 mb-0">XYZ Company</h2>
+      <ul class="breadcrumb pl-0">
+        <li><a href="home">Home</a></li>
+        <li><a>Company</a></li>
+        <li class="active">Profile</li>
+      </ul>
+    </div>
+
+    <div class="col-md-2">
+      <div class="row topItems fifthItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">320</p>
+          <hr />
+          <p class="center white">Cleaners</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="row topItems secondItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-stream"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">5,670</p>
+          <hr />
+          <p class="center white">Products</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="row topItems firstItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">30</p>
+          <hr />
+          <p class="center white">Drivers</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="row topItems forthItem">
+        <div class="col-md-6 center" style="border-right: 1px solid #ffffff;">
+          <i class="fas fa-outdent"></i>
+        </div>
+        <div class="col-md-6 pd-0">
+          <p class="center white">1,230</p>
+          <hr />
+          <p class="center white">Orders</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="loginDiv">
+        <div class="heading">
+          <h5 class="center white">Update Company Info</h5>
+        </div>
+        <form class="inputForm" [formGroup]="profileForm">
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-user"></i></span>
+              <input
+                id="cname"
+                type="text"
+                class="text-field login-fields"
+                placeholder="Company Name"
+                formControlName="companyName"
+                ngDefaultControl
+              />
+            </div>
+          </div>
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <input
+                id="location"
+                type="text"
+                class="text-field login-fields"
+                placeholder="Location"
+                formControlName="location"
+                ngDefaultControl
+              />
+            </div>
+          </div>
+
+          <div class="mb-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fas fa-phone"></i>
+              </span>
+              <input
+                maxlength="8"
+                id="contact"
+                type="tel"
+                class="text-field login-fields"
+                placeholder="Company Contact"
+                formControlName="companyContract"
+                ngDefaultControl
+              />
+            </div>
+          </div>
+
+          <p class="center">
+            <button routerLink="/home" class="btn btn-success login-btn mt-1">
+              Update
+            </button>
+          </p>
+          <p class="center pointer" routerLink="/home">Cancel</p>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <button (click)="doTest()">HHHH</button>
+    </div>
+  </div>
+</section>

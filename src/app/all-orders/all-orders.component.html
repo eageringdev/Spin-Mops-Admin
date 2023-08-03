@@ -1,0 +1,67 @@
+<app-header></app-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+<section>
+
+  <div class="topTabs row mt-1">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#pending">New Orders ({{this.pendingOrdersCount}})</a></li>
+      <li><a data-toggle="tab" href="#approved">Approved ({{this.approvedOrdersCount}})</a></li>
+      <li><a data-toggle="tab" href="#completed">Completed ({{this.completedOrdersCount}})</a></li>
+      <li><a data-toggle="tab" href="#cancelled">Cancelled ({{this.cancelledOrdersCount}})</a></li>
+    </ul>
+  </div>
+
+  <div class="tab-content mt-2">
+
+    <div id="pending" class="tab-pane fade in active row" style="padding: 0px 20px;">
+
+      <div *ngFor="let order of pendingOrders; index as i" (click)="orderDetailsPending(i)" class="col-md-2">
+        <div class="anItem">
+          <p class="heading">{{order.orderId}}</p>
+          <img src="/assets/imgs/cleaner.png">
+          <p class="subHead">Order Placed: {{order.orderPlacedFormatedDate}}</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="approved" class="tab-pane fade in row" style="padding: 0px 20px;">
+
+      <div *ngFor="let order of approvedOrders; index as i" (click)="orderDetailsApproved(i)" class="col-md-2">
+        <div class="anItem">
+          <p class="heading">{{order.orderId}}</p>
+          <img src="/assets/imgs/cleaner.png">
+          <p class="subHead">Order Placed: {{order.orderPlacedFormatedDate}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="completed" class="tab-pane fade in row" style="padding: 0px 20px;">
+
+      <div *ngFor="let order of completedOrders; index as i" (click)="orderDetailsCompleted(i)" class="col-md-2">
+        <div class="anItem">
+          <p class="heading">{{order.orderId}}</p>
+          <img src="/assets/imgs/cleaner.png">
+          <p class="subHead">Order Placed: {{order.orderPlacedFormatedDate}}</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="cancelled" class="tab-pane fade in row" style="padding: 0px 20px;">
+
+      <div *ngFor="let order of cancelledOrders; index as i" (click)="orderDetailsCancelled(i)" class="col-md-2">
+        <div class="anItem">
+          <p class="heading">{{order.orderId}}</p>
+          <img src="/assets/imgs/cleaner.png">
+          <p class="subHead">Order Placed: {{order.orderPlacedFormatedDate}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

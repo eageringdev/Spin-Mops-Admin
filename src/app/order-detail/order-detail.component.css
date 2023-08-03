@@ -1,0 +1,51 @@
+.innerDiv {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.innerDiv div {
+  padding: 0px !important;
+}
+
+.innerDiv img {
+  width: 100%;
+  height: 70px;
+  margin: 5px;
+  object-fit: contain;
+}
+
+.innerDiv hr {
+  margin: 5px 0px;
+}
+
+.innerDiv p {
+  margin: 0px;
+}
+
+.innerDiv div h3 {
+  margin-top: 5px;
+}
+
+.smallText {
+  font-size: 12px !important;
+}
+
+.smallTxt {
+  font-size: 10px !important;
+}
+
+.orderStatusBar {
+  height: 4em !important;
+  background-color: green;
+}
+
+.orderStatusTxt {
+  text-align: center;
+  color: #ffffff;
+}
+
+.editC {
+  font-size: 12px !important;
+  color: cornflowerblue !important;
+  cursor: pointer !important;
+}
